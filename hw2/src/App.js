@@ -19,6 +19,7 @@ import './index.css';
     })
   }
    incrementCount =()=>{
+     console.log("inc")
      this.setState({
       count:this.state.count +1
      })
@@ -76,9 +77,9 @@ import './index.css';
                    {item.value}
                    <button onClick={()=>this.deleteItem(item.id)}> Delete </button>
                    <br/>
-                   <button title="+" task={()=> this.incrementCount()}>+</button>
+                   <button title="+" onClick={this.incrementCount}>+</button>
                    <h4>{count} </h4>
-                   <button title="-" task={()=> this.decrementCount()}>-</button>
+                   <button title="-" onClick={()=> this.decrementCount()}>-</button>
                  </li>
                )
              })}
