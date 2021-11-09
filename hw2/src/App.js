@@ -1,5 +1,6 @@
 import { Component } from "react";
 import './index.css';
+import Counter from './Counter'
 
 
   class App extends Component{
@@ -18,18 +19,18 @@ import './index.css';
       [key]:value
     })
   }
-   incrementCount =()=>{
-     console.log("inc")
-     this.setState({
-      count:this.state.count +1
-     })
-    }
-     decrementCount =()=>{
-      this.setState({
-       count:this.state.count -1 
-      })
+  //  incrementCount =()=>{
+  //    console.log("inc")
+  //    this.setState({
+  //     count:this.state.count +1
+  //    })
+  //   }
+  //    decrementCount =()=>{
+  //     this.setState({
+  //      count:this.state.count -1 
+  //     })
      
-   }
+  //  }
   addItem(){
     // creat item with unique id 
     const newItem ={
@@ -53,7 +54,7 @@ import './index.css';
     this.setState({list:updatedList});
   }
  render() {
-   let {count}=this.state;
+  //  let {count}=this.state;
     return (
       <div className="App">
         <div>
@@ -77,9 +78,10 @@ import './index.css';
                    {item.value}
                    <button onClick={()=>this.deleteItem(item.id)}> Delete </button>
                    <br/>
-                   <button title="+" onClick={this.incrementCount}>+</button>
+                   <Counter/>
+                   {/* <button title="+" onClick={this.incrementCount}>+</button>
                    <h4>{count} </h4>
-                   <button title="-" onClick={()=> this.decrementCount()}>-</button>
+                   <button title="-" onClick={()=> this.decrementCount()}>-</button> */}
                  </li>
                )
              })}
